@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": -41.55, "left": -188.4, "attrs": {} },
+    {
+      "type": "wokwi-74hc165",
+      "id": "sr1",
+      "top": 84.54,
+      "left": -4.3,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dip-switch-8",
+      "id": "sw1",
+      "top": 83.1,
+      "left": 280.3,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 177.6,
+      "left": 220.25,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 177.6,
+      "left": 201.05,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 177.6,
+      "left": 124.25,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 177.6,
+      "left": 143.45,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 177.6,
+      "left": 162.65,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 177.6,
+      "left": 181.85,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 177.6,
+      "left": 258.65,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r8",
+      "top": 177.6,
+      "left": 239.45,
+      "rotate": 90,
+      "attrs": { "value": "4700" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -226.97, "left": -464, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r9",
+      "top": -72.85,
+      "left": -268.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.5", "sr1:GND", "black", [ "h58.8", "v-19.2" ] ],
+    [ "pico:3V3", "sr1:VCC", "red", [ "h0" ] ],
+    [ "pico:GP21", "sr1:PL", "gray", [ "h39.6", "v-28.8" ] ],
+    [ "pico:GP18", "sr1:CP", "white", [ "h49.2", "v-48" ] ],
+    [ "pico:GND.8", "sr1:CE", "black", [ "h193.2", "v86.4" ] ],
+    [ "sr1:DS", "sr1:CE", "black", [ "h27.6", "v-48" ] ],
+    [ "pico:3V3", "sw1:8a", "red", [ "h490.8", "v67.2" ] ],
+    [ "pico:3V3", "sw1:7a", "red", [ "h490.8", "v76.8" ] ],
+    [ "pico:3V3", "sw1:6a", "red", [ "h490.8", "v86.4" ] ],
+    [ "pico:3V3", "sw1:5a", "red", [ "h490.8", "v96" ] ],
+    [ "pico:3V3", "sw1:4a", "red", [ "h490.8", "v105.6" ] ],
+    [ "pico:3V3", "sw1:3a", "red", [ "h490.8", "v115.2" ] ],
+    [ "pico:3V3", "sw1:2a", "red", [ "h490.8", "v124.8" ] ],
+    [ "pico:3V3", "sw1:1a", "red", [ "h490.8", "v134.4" ] ],
+    [ "sr1:D0", "sw1:1b", "gold", [ "h37.2", "v28.8" ] ],
+    [ "sr1:D1", "sw1:2b", "gold", [ "h46.8", "v28.8" ] ],
+    [ "sr1:D2", "sw1:3b", "gold", [ "h56.4", "v28.8" ] ],
+    [ "sr1:D3", "sw1:4b", "gold", [ "h66", "v28.8" ] ],
+    [ "r7:1", "sw1:1b", "gold", [ "h0", "v-57.6" ] ],
+    [ "r8:1", "sw1:2b", "gold", [ "h0", "v-67.2" ] ],
+    [ "r1:1", "sw1:3b", "gold", [ "h0", "v-76.8" ] ],
+    [ "r2:1", "sw1:4b", "gold", [ "h0", "v-86.4" ] ],
+    [ "r6:1", "sw1:5b", "gold", [ "h0", "v-96" ] ],
+    [ "r5:1", "sw1:6b", "gold", [ "h0", "v-105.6" ] ],
+    [ "r4:1", "sw1:7b", "gold", [ "h0", "v-115.2" ] ],
+    [ "r3:1", "sw1:8b", "gold", [ "h0", "v-124.8" ] ],
+    [ "sr1:D4", "sw1:5b", "gold", [ "h-19.2", "v-28.8", "h124.8", "v48" ] ],
+    [ "sr1:D5", "sw1:6b", "gold", [ "h-28.8", "v-48", "h144", "v48" ] ],
+    [ "sr1:D6", "sw1:7b", "gold", [ "h-38.4", "v-67.2", "h163.2", "v48" ] ],
+    [ "sr1:D7", "sw1:8b", "gold", [ "h-48", "v-86.4", "h182.4", "v48" ] ],
+    [ "sr1:DS", "r3:2", "black", [ "h27.6", "v86.4", "h76.8" ] ],
+    [ "r3:2", "r4:2", "black", [ "h0" ] ],
+    [ "r4:2", "r5:2", "black", [ "h0" ] ],
+    [ "r5:2", "r6:2", "black", [ "h0" ] ],
+    [ "r6:2", "r2:2", "black", [ "h0" ] ],
+    [ "r2:2", "r1:2", "black", [ "h0" ] ],
+    [ "r1:2", "r8:2", "black", [ "h0" ] ],
+    [ "r8:2", "r7:2", "black", [ "h0" ] ],
+    [ "pico:GND.4", "lcd1:VSS", "black", [ "h0" ] ],
+    [ "pico:3V3", "lcd1:VDD", "red", [ "h30", "v220.8", "h-336.1" ] ],
+    [ "lcd1:VSS", "lcd1:RW", "black", [ "v19.2", "h38.4" ] ],
+    [ "lcd1:VSS", "lcd1:K", "black", [ "v19.2", "h144" ] ],
+    [ "pico:3V3", "r9:2", "red", [ "h30", "v-76.8" ] ],
+    [ "r9:1", "lcd1:A", "red", [ "v0", "h-28.8" ] ],
+    [ "pico:GP7", "lcd1:D7", "gray", [ "h0" ] ],
+    [ "pico:GP8", "lcd1:D6", "gold", [ "h-134.4", "v-9.6" ] ],
+    [ "pico:GP9", "lcd1:D5", "orange", [ "h-144" ] ],
+    [ "pico:GP10", "lcd1:D4", "green", [ "h0" ] ],
+    [ "pico:GP11", "lcd1:E", "purple", [ "h0" ] ],
+    [ "pico:GP12", "lcd1:RS", "blue", [ "h0" ] ],
+    [ "pico:GP16", "sr1:Q7", "magenta", [ "v0", "h183.6", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}
